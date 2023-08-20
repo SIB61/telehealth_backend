@@ -1,17 +1,15 @@
-const express = require("express");
-var bodyParser = require('body-parser');
-const dotenv=require("dotenv");
-const cors = require("cors");
-const administrator=require("./models/administrators");
+import express from "express";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import cors from "cors";
+import { connectDb } from "./db/conn.js";
+import { createMember } from "./lib/member.js";
 const app = express();
-var jsonParser = bodyParser.json();
-dotenv.config({path:"./config.env"});
-require("./db/conn.js");
-
-
-
+app.use(cors());
+app.use(bodyParser.json());
+dotenv.config({ path: "./config.env" });
+connectDb();
+app.post('members',createMember)
 app.listen("5000", () => {
-    console.log("Server is running!");
-  });
-
-
+  console.log("Server is running!");
+});

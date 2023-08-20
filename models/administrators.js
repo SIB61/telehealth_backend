@@ -1,5 +1,4 @@
-const { Double } = require('mongodb');
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const administrators = new Schema({
@@ -18,6 +17,5 @@ const administrators = new Schema({
    paymentInfo:String
 });
 
-const administrator = mongoose.model('administrators', administrators);
+export const administrator = mongoose.model('administrators', administrators);
 
-module.exports = administrator;

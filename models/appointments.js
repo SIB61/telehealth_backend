@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const appointments = new Schema({
@@ -22,9 +22,7 @@ const appointments = new Schema({
      payoutStatus:String,
      event:Number,
      paymentInfo:String,
-
 });
 
-const appointment = mongoose.model('appointments', appointments);
+export const appointment = mongoose.model('appointments', appointments);
 
-module.exports = appointment;
