@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const administrators = new Schema({
+const Members = new Schema({
   email: {
     require: true,
     type: String,
@@ -29,4 +29,4 @@ const administrators = new Schema({
   matChups: Array,
 });
 
-export const administrator = mongoose.model("administrators", administrators);
+export const member = mongoose.model("members", Members);
