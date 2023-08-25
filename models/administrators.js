@@ -15,7 +15,11 @@ const administrators = new Schema({
    phone:String,
    subscription:Number,
    members:Array,
-   paymentInfo:String
+   paymentInfo:Array,
+   dateStart:String,
+   slots:Number,
+   images:String,
+   cancelled:Boolean
 });
 
 const administrator = mongoose.model('administrators', administrators);
